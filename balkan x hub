@@ -1,0 +1,11 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Balkan x", "Synapse")
+ 
+local Tab = Window:NewTab("Main🏠")
+local Section = Tab:NewSection("made by valipro1pro1")
+Section:NewLabel("Script")
+ 
+ 
+Section:NewButton("Pls Donate", "OG", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/CF-Trail/tzechco-PlsDonateAutofarmBackup/main/old.lua'))()
+end)
