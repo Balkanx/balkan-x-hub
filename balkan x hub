@@ -11,10 +11,28 @@ OrionLib:MakeNotification({
 
 _G.key = "balkan69#"
 _G.keyInput = "string"
+
 function MakeScripthub()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Balkanx/Balkan-x/main/Balkan%20x", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Balkanx/Balkan-x/main/Balkan%20x", true))()
 end
 
+function CorrectKeyNotification()
+OrionLib:MakeNotification({
+	Name = "Correct key!",
+	Content = "You have entered the correct key!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end
+
+function IncorrectKeyNotification()
+OrionLib:MakeNotification({
+	Name = "Incorrect key!",
+	Content = "You have entered the incorrect key!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end
 
 local Tab = Window:MakeTab({
 	Name = "Key",
@@ -33,10 +51,15 @@ Tab:AddTextbox({
 Tab:AddButton({
 	Name = "Check key",
 	Callback = function()
-      		if _G.keyInput == _G.key then
-               MakeScripthub()
-            end
-  	end    
+            if _G.keyInput == _G.key then
+                MakeScripthub()
+                CorrectKeyNotification()
+            else
+                IncorrectKeyNotification()
+            end    
+        end
 })
 
-Tab:AddLabel("key link: https://discord.gg/NwjvQvNJZ")
+Tab:AddLabel("Key link: https://discord.gg/uMgkKq5wP")
+
+OrionLib:Init()
