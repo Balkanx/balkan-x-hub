@@ -1,11 +1,42 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Balkan x", "Synapse")
- 
-local Tab = Window:NewTab("Main🏠")
-local Section = Tab:NewSection("made by valipro1pro1")
-Section:NewLabel("Script")
- 
- 
-Section:NewButton("Pls Donate", "OG", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/CF-Trail/tzechco-PlsDonateAutofarmBackup/main/old.lua'))()
-end)
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "Key system", HidePremium = false, SaveConfig = true,IntroEnabled = false})
+
+OrionLib:MakeNotification({
+	Name = "Youre logged ",
+	Content = "You are logged in as "..Player.Name.."",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+_G.key = "balkan69#"
+_G.keyInput = "string"
+function MakeScripthub()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Balkanx/Balkan-x/main/Balkan%20x", true))()
+end
+
+
+local Tab = Window:MakeTab({
+	Name = "Key",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Enter key",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		_G.keyInput = Value
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Check key",
+	Callback = function()
+      		if _G.keyInput == _G.key then
+               MakeScripthub()
+            end
+  	end    
+})
+
+Tab:AddLabel("key link: https://discord.gg/NwjvQvNJZ")
