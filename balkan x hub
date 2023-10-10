@@ -41,7 +41,7 @@ local Tab = Window:MakeTab({
 
 Tab:AddTextbox({
 	Name = "Enter key",
-	Default = "",
+	Default = "key link: https://discord.gg/uMgkKq5wP",
 	TextDisappear = true,
 	Callback = function(Value)
 		_G.keyInput = Value
@@ -60,6 +60,6 @@ Tab:AddButton({
         end
 })
 
-Tab:AddLabel("Key link: https://discord.gg/uMgkKq5wP")
+Tab:AddLabel("Copy key link from textbox")
 
 OrionLib:Init()
